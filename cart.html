@@ -172,10 +172,17 @@
 		})
 
 		function calculate() {
-   const checkedInputs = document.querySelectorAll("#myTable input:checked");
-   const total = Array.from(checkedInputs).reduce(function(total, cb) {
-     return total + +cb.value;
-  }, 0);
+  const checkedInputs = document.querySelectorAll("#myTable input:checked");
+  let total;
+  if (checkedInputs.length === 7) {
+    total = 500;
+  } else {
+    total = Array.from(checkedInputs).reduce(function(total, cb) {
+      return total + +cb.value;
+    }, 0);
+	//total+=50
+  }
+  
   document.querySelector("#val").textContent = "The subtotal is " + total.toFixed(2);
 }
 
