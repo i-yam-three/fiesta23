@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <title>FIESTA'23 Register</title>
+</head>
+<body>
+
+
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+	<div class="wrapper">
+		<div class="header">
+			<ul>
+				<li class="active form_1_progessbar">
+					<div>
+						<p>1</p>
+					</div>
+				</li>
+				<li class="form_2_progessbar">
+					<div>
+						<p>2</p>
+					</div>
+				</li>
+				<li class="form_3_progessbar">
+					<div>
+						<p>3</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="form_wrap">
+			<div class="form_1 data_info">
+				<h2>Personal Info</h2>
+				<form name="submit-to-google-sheet">
+					<div class="form_container">
+						<div class="input_wrap">
+							<label for="name">Name</label>
+							<input type="text" name="name" class="input" id="name" required>
+						</div>
+						<div class="input_wrap">
+							<label for="email">Email</label>
+							<input type="text" name="email" class="input" id="email" required>
+						</div>
+						<div class="input_wrap">
+							<label for="phone">Phone Number</label>
+							<input type="tel" name="phone" class="input" id="phone" required>
+						</div>
+						<div class="input_wrap">
+							<label for="college">College Name</label>
+							<input type="text" name="college" class="input" id="college" required>
+						</div>
+						<span id="msg"></span>
+						<center><button type="submit" class="myButton1" required>Send</button></center>
+					</div>
+				</form>
+			</div>
+			<div class="form_2 data_info" style="display: none;">
+				<h2>Payment Info</h2>
+				<form>
+					<div class="form_container">
+						
+						<div class="input_wrap">
+							<table id="myTable">
+								<tr>
+								  <td>IdeOn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								  <td>₹150</td>
+								  <td><input type="checkbox" value="150" onclick="calculate()"></td>
+								</tr>
+								<tr>
+								  <td>TeXplore</td>
+								  <td>₹200</td>
+								  <td><input type="checkbox" value="200"  onclick="calculate()"></td>
+								</tr>
+								<tr>
+									<td>Iron Out</td>
+									<td>₹50</td>
+									<td><input type="checkbox" value="50" onclick="calculate()"></td>
+								</tr>
+								<tr>
+									<td>Cipher Up</td>
+									<td>₹50</td>
+									<td><input type="checkbox" value="50" onclick="calculate()"></td>
+								</tr>
+								<tr>
+									<td>TeClash</td>
+									<td>₹50</td>
+									<td><input type="checkbox" value="50" onclick="calculate()"></td>
+								</tr>
+								<tr>
+									<td>Workshop</td>
+									<td>₹50</td>
+									<td><input type="checkbox" value="50" onclick="calculate()"></td>
+								</tr>
+							  </table>
+							  <span id="val">The subtotal is 0</span>
+						</div>
+						<div class="input_wrap">
+							<div id="container"><a href="upi://pay?pa=mminhajmahroof@oksbi&pn=SenderName&tn=TestingGpay&am=100&cu=INR">
+								<button type="button" class="google-pay" title="Google pay" onclick="onGooglePaymentButtonClicked()"></button></a>
+							</div>			
+						</div>
+
+					</div>
+				</form>
+			</div>
+			<div class="form_3 data_info" style="display: none;">
+				<h2>Final Step</h2>
+				<form>
+					<div class="form_container">
+						<div class="input_wrap">
+								
+						</div>
+						<div class="input_wrap">
+							<center><img src="assets/images/WhatsApp.png" height="320" width="320"></center>
+						</div>
+						<div class="input_wrap">
+							<center><a href="https://wa.me/918281454994?text=Name%20%3A%0AEmaIl%20%3A%0ATotal%20Event%20%3A%0ATransfered%20Amount%20%3A%0A%0A(Please%20attach%20transaction%20screenshot.)" class="myButton">WhatsApp</a></center>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="btns_wrap">
+			<div class="common_btns form_1_btns">
+				<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+			</div>
+			<div class="common_btns form_2_btns" style="display: none;">
+				<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+				<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+			</div>
+			<div class="common_btns form_3_btns" style="display: none;">
+				<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+				<button type="button" class="btn_done">Done</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal_wrapper">
+		<div class="shadow"></div>
+		<div class="success_wrap">
+			<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+			<p>You have successfully completed the process.</p>
+		</div>
+	</div>
+	<script src="./assets/js/cart.js"></script>
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbyjZCbPHS_FxzrMClQDk01qakfQr0zwJ15iUCw_FuoimWifl9rwOANWwEDEKvQDpt-I/exec'
+		const form = document.forms['submit-to-google-sheet']
+		const msg =document.getElementById('msg')
+
+
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => {
+				msg.innerHTML = "Submmitted"
+				
+			form.reset()
+
+			})
+			.catch(error => console.error('Error!', error.message))
+		})
+
+		function calculate() {
+   const checkedInputs = document.querySelectorAll("#myTable input:checked");
+   const total = Array.from(checkedInputs).reduce(function(total, cb) {
+     return total + +cb.value;
+  }, 0);
+  document.querySelector("#val").textContent = "The subtotal is " + total.toFixed(2);
+}
+
+
+
+	</script>
+
+</body>
+</html>
