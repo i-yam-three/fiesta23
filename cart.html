@@ -132,7 +132,7 @@
 		</div>
 		<div class="btns_wrap">
 			<div class="common_btns form_1_btns">
-				<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+				<button type="button" class="btn_next" width="100">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
 			</div>
 			<div class="common_btns form_2_btns" style="display: none;">
 				<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
@@ -154,6 +154,8 @@
 	</div>
 	<script src="./assets/js/cart.js"></script>
 	<script>
+		const nextBtn = document.querySelector('.btn_next')
+  nextBtn.style.display = 'none'
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbyjZCbPHS_FxzrMClQDk01qakfQr0zwJ15iUCw_FuoimWifl9rwOANWwEDEKvQDpt-I/exec'
 		const form = document.forms['submit-to-google-sheet']
 		const msg =document.getElementById('msg')
@@ -166,6 +168,7 @@
 				msg.innerHTML = "Submmitted"
 				
 			form.reset()
+			nextBtn.style.display = 'block'
 
 			})
 			.catch(error => console.error('Error!', error.message))
@@ -175,7 +178,7 @@
   const checkedInputs = document.querySelectorAll("#myTable input:checked");
   let total;
   if (checkedInputs.length === 7) {
-    total = 500;
+    total = 550;
   } else {
     total = Array.from(checkedInputs).reduce(function(total, cb) {
       return total + +cb.value;
